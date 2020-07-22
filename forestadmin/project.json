@@ -26,6 +26,11 @@
         "bonus": false
       },
       {
+        "description": "Se o usuário não preencher o campo ou preencher com apenas espaços vazios adicionar a mensagem \'Por favor, digite o conteúdo da carta.\",
+        "enabled": true,
+        "bonus": false
+      },
+      {
         "description": "Crie a classe `newspaper`",
         "enabled": true,
         "bonus": false
