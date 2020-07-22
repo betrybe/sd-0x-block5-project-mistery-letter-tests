@@ -4,6 +4,7 @@ const LETTER_GENERATED_SPANS_SELECTOR = 'p#carta-gerada>span';
 const LETTER_ADD_BUTTON_SELECTOR = 'button#criar-carta';
 const LETTER_COUNTER_P_SELECTOR = 'p#carta-contador';
 const WORDS_SPLIT_CHARACTER = ' ';
+const LETTER_BLANK_MESSAGE = 'Por favor, digite o conteúdo da carta!';
 const ALLOWED_CLASSES = [
   'newspaper',
   'magazine1',
