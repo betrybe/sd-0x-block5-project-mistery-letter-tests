@@ -84,6 +84,21 @@ describe('Mistery letter project', () => {
     cy.get(LETTER_ADD_BUTTON_SELECTOR).click();
     cy.get(LETTER_INPUT_SELECTOR).should('have.value', letterContent);
   });
+  
+  it('Se o usuário não preencher o campo ou preencher com apenas espaços vazios adicionar a mensagem \'Por favor, digite o conteúdo da carta.\'', () => {
+    const letterContent = ' ';
+
+    cy.get(LETTER_ADD_BUTTON_SELECTOR).should('exist');
+    cy.get(LETTER_GENERATED_P_SELECTOR).should('exist');
+
+    cy.get(LETTER_INPUT_SELECTOR).type(letterContent);
+    cy.get(LETTER_ADD_BUTTON_SELECTOR).click();
+
+    cy.get(LETTER_GENERATED_P_SELECTOR).each(($el, index) => {
+      const span = $el[0];
+      expect(span.innerText.toLowerCase()).to.be.equal(LETTER_BLANK_MESSAGE.toLowerCase());
+    });
+  });
 
   it('Crie a classe `newspaper`', () => {
     const properties = [{
