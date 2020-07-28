@@ -74,7 +74,7 @@ describe('Deve haver um parágrafo com o `id="carta-gerada"` onde o usuário ver
   });
 });
 
-describe('Deve haver um parágrafo com o `id="carta-gerada"` onde o usuário verá o resultado de sua carta misteriosa', () => {
+describe('Deve haver um botão com `id="criar-carta"` e ao clicar nesse botão, a carta misteriosa deve ser gerada', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
