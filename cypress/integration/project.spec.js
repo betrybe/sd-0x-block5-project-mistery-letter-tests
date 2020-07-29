@@ -108,7 +108,7 @@ describe('Ao criar uma carta através do botão `id="criar-carta"`, o `input` co
   });
 });
 
-describe('Se o usuário não preencher o campo ou preencher com apenas espaços vazios adicionar a mensagem "Por favor, digite o conteúdo da carta."', () => {
+describe("Se o usuário não preencher o campo ou preencher com apenas espaços vazios adicionar a mensagem 'Por favor, digite o conteúdo da carta.'", () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
