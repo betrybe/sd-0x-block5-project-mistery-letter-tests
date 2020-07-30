@@ -348,7 +348,7 @@ describe('Crie a classe `skewright`', () => {
   });
 });
 
-describe('Adicione as classes de forma aleatória afim de estilizar as palavras', () => {
+describe('Adicione as classes de forma aleatória a fim de estilizar as palavras.', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
