@@ -4,7 +4,7 @@ const LETTER_GENERATED_SPANS_SELECTOR = 'p#carta-gerada>span';
 const LETTER_ADD_BUTTON_SELECTOR = 'button#criar-carta';
 const LETTER_COUNTER_P_SELECTOR = 'p#carta-contador';
 const WORDS_SPLIT_CHARACTER = ' ';
-const LETTER_BLANK_MESSAGE = 'Por favor, digite o conteúdo da carta!';
+const LETTER_BLANK_MESSAGE = 'Por favor, digite o conteúdo da carta.';
 const ALLOWED_CLASSES = [
   'newspaper',
   'magazine1',
@@ -426,7 +426,7 @@ describe('Deve haver um parágrafo com o `id="carta-contador"` onde existirá um
     cy.get(LETTER_COUNTER_P_SELECTOR).should('exist');
   });
 
-  it('Ao criar uma carta deve atualizar o p com o `id="carta-contador" com o valor "esta é uma carta com [n] palavras"', () => {
+  it('Ao criar uma carta deve atualizar o p com o `id="carta-contador" com o número de palavras da carta (valor numérico).', () => {
     const letterContent1 = 'esta é uma carta com 7 palavras';
     const letter1Counter = letterContent1.split(WORDS_SPLIT_CHARACTER).length;
     createLetter(letterContent1);
