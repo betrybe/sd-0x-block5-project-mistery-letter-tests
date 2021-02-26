@@ -38,7 +38,6 @@ const checkClass = (className, properties = []) => {
 const createLetter = (content) => {
   cy.get(LETTER_ADD_BUTTON_SELECTOR).should('exist');
   cy.get(LETTER_INPUT_SELECTOR).clear();
-
   cy.get(LETTER_INPUT_SELECTOR).type(content);
   cy.get(LETTER_ADD_BUTTON_SELECTOR).click();
 };
@@ -46,7 +45,6 @@ const createLetter = (content) => {
 const checkLetterContent = (content) => {
   createLetter(content);
   const contentList = content.split(WORDS_SPLIT_CHARACTER);
-
   cy.get(LETTER_GENERATED_SPANS_SELECTOR).should('have.length', contentList.length);
   cy.get(LETTER_GENERATED_SPANS_SELECTOR).each(($el, index) => {
     const span = $el[0];
@@ -54,7 +52,7 @@ const checkLetterContent = (content) => {
   });
 };
 
-describe('Deve haver um `input` com o `id="carta-texto"` onde o usuário poderá digitar o conteúdo da carta', () => {
+describe('1 - Deve haver um `input` com o id="carta-texto" onde o usuário poderá digitar o conteúdo da carta', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -64,7 +62,7 @@ describe('Deve haver um `input` com o `id="carta-texto"` onde o usuário poderá
   });
 });
 
-describe('Deve haver um parágrafo com o `id="carta-gerada"` onde o usuário verá o resultado de sua carta misteriosa', () => {
+describe('2 - Deve haver um parágrafo com o id="carta-gerada" onde o usuário verá o resultado de sua carta misteriosa', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -74,7 +72,7 @@ describe('Deve haver um parágrafo com o `id="carta-gerada"` onde o usuário ver
   });
 });
 
-describe('Deve haver um botão com `id="criar-carta"` e ao clicar nesse botão, a carta misteriosa deve ser gerada', () => {
+describe('3 - Deve haver um botão com id="criar-carta" e ao clicar nesse botão, a carta misteriosa deve ser gerada', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -92,7 +90,7 @@ describe('Deve haver um botão com `id="criar-carta"` e ao clicar nesse botão, 
   });
 });
 
-describe('Ao criar uma carta através do botão `id="criar-carta"`, o `input` com `id="carta-texto"` deve permanecer com o texto digitado', () => {
+describe('4 - Ao criar uma carta através do botão id="criar-carta", o `input` com id="carta-texto" deve permanecer com o texto digitado', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -101,14 +99,13 @@ describe('Ao criar uma carta através do botão `id="criar-carta"`, o `input` co
     const letterContent = 'esta é uma outra carta';
 
     cy.get(LETTER_ADD_BUTTON_SELECTOR).should('exist');
-
     cy.get(LETTER_INPUT_SELECTOR).type(letterContent);
     cy.get(LETTER_ADD_BUTTON_SELECTOR).click();
     cy.get(LETTER_INPUT_SELECTOR).should('have.value', letterContent);
   });
 });
 
-describe("Se o usuário não preencher o campo ou preencher com apenas espaços vazios adicionar a mensagem 'Por favor, digite o conteúdo da carta.'", () => {
+describe("5 - Se o usuário não preencher o campo ou preencher com apenas espaços vazios adicionar a mensagem 'Por favor, digite o conteúdo da carta.'", () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -118,7 +115,6 @@ describe("Se o usuário não preencher o campo ou preencher com apenas espaços 
 
     cy.get(LETTER_INPUT_SELECTOR).type(letterContent);
     cy.get(LETTER_ADD_BUTTON_SELECTOR).click();
-
     cy.get(LETTER_GENERATED_P_SELECTOR).each(($el, index) => {
       const span = $el[0];
       expect(span.innerText.toLowerCase()).to.be.equal(LETTER_BLANK_MESSAGE.toLowerCase());
@@ -126,7 +122,7 @@ describe("Se o usuário não preencher o campo ou preencher com apenas espaços 
   });
 });
   
-describe('Crie a classe `newspaper`', () => {
+describe('6 - Crie a classe `newspaper`', () => {
   it('Deve possuir a propriedade `backgroud-color` igual a rgb(250, 235, 215)', () => {
     const properties = [{
       key: 'background-color',
@@ -156,7 +152,7 @@ describe('Crie a classe `newspaper`', () => {
   });
 });
 
-describe('Crie a classe `magazine1`', () => {
+describe('7 - Crie a classe `magazine1`', () => {
   it('Deve possuir a propriedade `background-color` igual a rgb(0, 128, 128)`', () => {
     const properties = [{
       key: 'background-color',
@@ -204,7 +200,7 @@ describe('Crie a classe `magazine1`', () => {
   });
 });
 
-describe('Crie a classe `magazine2`', () => {
+describe('8 - Crie a classe `magazine2`', () => {
   it('Deve possuir a propriedade `background-image` igual a "images/pink-pattern.png"', () => {
     const properties = [{
       key: 'background-image',
@@ -244,7 +240,7 @@ describe('Crie a classe `magazine2`', () => {
   });
 });
 
-describe('Crie a classe `medium`', () => {
+describe('9 - Crie a classe `medium`', () => {
   it('Deve possuir a propriedade `font-size` igual a "20px"', () => {
     const properties = [{
       key: 'font-size',
@@ -264,7 +260,7 @@ describe('Crie a classe `medium`', () => {
   });
 });
 
-describe('Crie a classe `big`', () => {
+describe('10 - Crie a classe `big`', () => {
   it('Deve possuir a propriedade `font-size` igual a "30px"', () => {
     const properties = [{
       key: 'font-size',
@@ -284,7 +280,7 @@ describe('Crie a classe `big`', () => {
   });
 });
 
-describe('Crie a classe `reallybig`', () => {
+describe('11 - Crie a classe `reallybig`', () => {
   it('Deve possuir a propriedade `font-size` igual a "40px"', () => {
     const properties = [{
       key: 'font-size',
@@ -304,7 +300,7 @@ describe('Crie a classe `reallybig`', () => {
   });
 });
 
-describe('Crie a classe `rotateleft`', () => {
+describe('12 - Crie a classe `rotateleft`', () => {
   it('Deve possuir a propriedade `transform` igual a "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"', () => {
     const properties =[{
       key: 'transform',
@@ -315,7 +311,7 @@ describe('Crie a classe `rotateleft`', () => {
   });
 });
 
-describe('Crie a classe `rotateright`', () => {
+describe('13 - Crie a classe `rotateright`', () => {
   it('Deve possuir a propriedade `transform` igual a "matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 0)"', () => {
     const properties =[{
       key: 'transform',
@@ -326,7 +322,7 @@ describe('Crie a classe `rotateright`', () => {
   });
 });
 
-describe('Crie a classe `skewleft`', () => {
+describe('14 - Crie a classe `skewleft`', () => {
   it('Deve possuir a propriedade `transform` igual a "matrix(1, 0, 0.176327, 1, 0, 0)"', () => {
     const properties =[{
       key: 'transform',
@@ -337,7 +333,7 @@ describe('Crie a classe `skewleft`', () => {
   });
 });
 
-describe('Crie a classe `skewright`', () => {
+describe('15 - Crie a classe `skewright`', () => {
   it('Deve possuir a propriedade `transform` igual a "matrix(1, 0, -0.176327, 1, 0, 0)"', () => {
     const properties =[{
       key: 'transform',
@@ -348,7 +344,7 @@ describe('Crie a classe `skewright`', () => {
   });
 });
 
-describe('Adicione as classes de forma aleatória a fim de estilizar as palavras.', () => {
+describe('16 - Adicione as classes de forma aleatória a fim de estilizar as palavras.', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -367,8 +363,7 @@ describe('Adicione as classes de forma aleatória a fim de estilizar as palavras
       });
     });
   });
-    
-    
+
   it('Ao criar uma segunda carta deve possuir uma lista de classes aleatórias', () => {
     createLetter(letterContent);
     cy.get(LETTER_GENERATED_SPANS_SELECTOR).then(($el) => {
@@ -385,7 +380,7 @@ describe('Adicione as classes de forma aleatória a fim de estilizar as palavras
   });
 });
 
-describe('Com uma carta misteriosa gerada, adicione a possibilidade de alterar o estilo de uma palavra específica ao clicar nela', () => {
+describe('17 - Com uma carta misteriosa gerada, adicione a possibilidade de alterar o estilo de uma palavra específica ao clicar nela', () => {
   const letterContent = 'esta é uma carta';
 
   beforeEach(() => {  
@@ -395,10 +390,8 @@ describe('Com uma carta misteriosa gerada, adicione a possibilidade de alterar o
   });
 
   const contentList = letterContent.split(WORDS_SPLIT_CHARACTER);
-
   const first = [];
   const second = [];
-
   const wordIndex = Math.floor(Math.random() * contentList.length) + 1;
   const wordSelector = `${LETTER_GENERATED_SPANS_SELECTOR}:nth-child(${wordIndex})`;
 
@@ -421,7 +414,7 @@ describe('Com uma carta misteriosa gerada, adicione a possibilidade de alterar o
   });  
 });
 
-describe('Deve haver um parágrafo com o `id="carta-contador"` onde existirá um contador de palavras', () => {
+describe('18 - Deve haver um parágrafo com o id="carta-contador" onde existirá um contador de palavras', () => {
   it('Existe um elemento p com o `id="carta-contador"`', () => {
     cy.get(LETTER_COUNTER_P_SELECTOR).should('exist');
   });
@@ -438,4 +431,3 @@ describe('Deve haver um parágrafo com o `id="carta-contador"` onde existirá um
     cy.get(LETTER_COUNTER_P_SELECTOR).should('have.text', letter2Counter.toString());
   });
 });
-
