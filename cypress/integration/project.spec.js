@@ -57,7 +57,7 @@ describe('1 - Deve haver um `input` com o id="carta-texto" onde o usuário poder
     cy.visit('./index.html');
   });
 
-  it('Será validado que existe um elemenento input com `id=carta-texto`', () => {
+  it('Será validado que existe um elemento `input` com `id=carta-texto`', () => {
     cy.get(LETTER_INPUT_SELECTOR).should('exist');
   });
 });
@@ -67,7 +67,7 @@ describe('2 - Deve haver um parágrafo com o id="carta-gerada" onde o usuário v
     cy.visit('./index.html');
   });
 
-  it('Será validado que existe um elemento p com o `id="carta-gerada"`', () => {
+  it('Será validado que existe um elemento `p` com o `id="carta-gerada"`', () => {
     cy.get(LETTER_GENERATED_P_SELECTOR).should('exist');
   });
 });
@@ -90,12 +90,12 @@ describe('3 - Deve haver um botão com id="criar-carta" e ao clicar nesse botão
   });
 });
 
-describe('4 - Ao criar uma carta através do botão id="criar-carta", o `input` com id="carta-texto" deve permanecer com o texto digitado', () => {
+describe('4 - Ao criar uma carta através do botão com id="criar-carta", o `input` com id="carta-texto" deve permanecer com o texto digitado', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
 
-  it('Será validado que ao criar uma carta através do botão `id="criar-carta"`, o `input` com `id="carta-texto"` deve permanecer com o texto digitado', () => {
+  it('Será validado que ao criar uma carta através do botão `id="criar-carta"` o input` com id="carta-texto" permanece com o texto digitado', () => {
     const letterContent = 'esta é uma outra carta';
 
     cy.get(LETTER_ADD_BUTTON_SELECTOR).should('exist');
@@ -110,7 +110,7 @@ describe("5 - Se o usuário não preencher o campo ou preencher com apenas espa�
     cy.visit('./index.html');
   });
   
-  it('Será validado que irá exibir a mensagem "Por favor, digite o conteúdo da carta." no elemento p com o `id="carta-gerada"', () => {
+  it('Será validado que irá exibir a mensagem "Por favor, digite o conteúdo da carta." no elemento `p` com o `id="carta-gerada"', () => {
     const letterContent = ' ';
 
     cy.get(LETTER_INPUT_SELECTOR).type(letterContent);
@@ -123,7 +123,7 @@ describe("5 - Se o usuário não preencher o campo ou preencher com apenas espa�
 });
   
 describe('6 - Crie a classe `newspaper`', () => {
-  it('Será validado que deve possuir a propriedade `backgroud-color` igual a rgb(250, 235, 215)', () => {
+  it('Será validado se a classe `newspaper` possui a propriedade `background-color` igual a rgb(250, 235, 215)', () => {
     const properties = [{
       key: 'background-color',
       value: 'rgb(250, 235, 215)'
@@ -132,7 +132,7 @@ describe('6 - Crie a classe `newspaper`', () => {
     checkClass('newspaper', properties);
   }); 
 
-  it('Será validado que deve possuir a propriedade `font-family` igual a "Times New Roman"', () => {
+  it('Será validado se a classe `newspaper` possui `font-family` igual a "Times New Roman"', () => {
     const properties = [{
       key: 'font-family',
       value: 'Times New Roman',
@@ -142,7 +142,7 @@ describe('6 - Crie a classe `newspaper`', () => {
     checkClass('newspaper', properties);
   }); 
 
-  it('Será validado que deve possuir a propriedade `font-weight` igual a 700', () => {
+  it('Será validado se a classe `newspaper` possui a propriedade `font-weight` igual a 700', () => {
     const properties = [{
       key: 'font-weight',
       value: '700'
@@ -153,7 +153,7 @@ describe('6 - Crie a classe `newspaper`', () => {
 });
 
 describe('7 - Crie a classe `magazine1`', () => {
-  it('Será validado que deve possuir a propriedade `background-color` igual a rgb(0, 128, 128)`', () => {
+  it('Será validado se a classe `magazine1` possui a propriedade `background-color` igual a rgb(0, 128, 128)`', () => {
     const properties = [{
       key: 'background-color',
       value: 'rgb(0, 128, 128)'
@@ -162,7 +162,7 @@ describe('7 - Crie a classe `magazine1`', () => {
     checkClass('magazine1', properties);
   });
   
-  it('Será validado que deve possuir a propriedade `color` igual a rgb(255, 255, 255)`', () => {
+  it('Será validado se a classe `magazine1` possui  a propriedade `color` igual a rgb(255, 255, 255)`', () => {
     const properties = [{
       key: 'color',
       value: 'rgb(255, 255, 255)'
@@ -171,7 +171,7 @@ describe('7 - Crie a classe `magazine1`', () => {
     checkClass('magazine1', properties);
   });
 
-  it('Será validado que deve possuir a propriedade `font-family` igual a "Verdana"', () => {
+  it('Será validado se a classe `magazine1` possui propriedade `font-family` igual a "Verdana"', () => {
     const properties = [{
       key: 'font-family',
       value: 'Verdana',
@@ -181,7 +181,7 @@ describe('7 - Crie a classe `magazine1`', () => {
     checkClass('magazine1', properties);
   });
 
-  it('Será validado que deve possuir a propriedade `font-weight` igual a "900"', () => {
+  it(' Será validado se a classe `magazine1` possui a propriedade `font-weight` igual a "900"', () => {
     const properties = [{
       key: 'font-weight',
       value: '900'
@@ -190,7 +190,7 @@ describe('7 - Crie a classe `magazine1`', () => {
     checkClass('magazine1', properties);
   });
 
-  it('Será validado que deve possuir a propriedade `text-transform` igual a "uppercase"`', () => {
+  it('Será validado se a classe `magazine1` possui a propriedade `text-transform` igual a "uppercase"`', () => {
     const properties = [{
       key: 'text-transform',
       value: 'uppercase'
@@ -201,7 +201,7 @@ describe('7 - Crie a classe `magazine1`', () => {
 });
 
 describe('8 - Crie a classe `magazine2`', () => {
-  it('Será validado que deve possuir a propriedade `background-image` igual a "images/pink-pattern.png"', () => {
+  it('Será validado se a classe `magazine2` possui a propriedade `background-image` igual a "images/pink-pattern.png"', () => {
     const properties = [{
       key: 'background-image',
       value: 'images/pink-pattern.png',
@@ -211,7 +211,7 @@ describe('8 - Crie a classe `magazine2`', () => {
     checkClass('magazine2', properties);
   });
 
-  it('Será validado que deve possuir a propriedade `color` igual a rgb(255, 0, 255)', () => {
+  it('Será validado se a classe `magazine2` possui a propriedade `color` igual a rgb(255, 0, 255)', () => {
     const properties = [{
       key: 'color',
       value: 'rgb(255, 0, 255)'
@@ -220,7 +220,7 @@ describe('8 - Crie a classe `magazine2`', () => {
     checkClass('magazine2', properties);
   });
 
-  it('Será validado que deve possuir a propriedade `font-family` igual a "Verdana"', () => {
+  it('Será validado se a classe `magazine2` possui a propriedade `font-family` igual a "Verdana"', () => {
     const properties = [{
       key: 'font-family',
       value: 'Verdana',
@@ -230,7 +230,7 @@ describe('8 - Crie a classe `magazine2`', () => {
     checkClass('magazine2', properties);
   });
 
-  it('Será validado que deve possuir a propriedade `font-weight` igual a "900"', () => {
+  it('Será validado se a classe `magazine2` possui a propriedade `font-weight` igual a "900"', () => {
     const properties = [{
       key: 'font-weight',
       value: '900',
@@ -241,7 +241,7 @@ describe('8 - Crie a classe `magazine2`', () => {
 });
 
 describe('9 - Crie a classe `medium`', () => {
-  it('Será validado que deve possuir a propriedade `font-size` igual a "20px"', () => {
+  it('Será validado se a classe `medium` possui a propriedade `font-size` igual a "20px"', () => {
     const properties = [{
       key: 'font-size',
       value: '20px'
@@ -250,7 +250,7 @@ describe('9 - Crie a classe `medium`', () => {
     checkClass('medium', properties);
   });
 
-  it('Será validado que deve possuir a propriedade `padding` igual a "8px"', () => {
+  it('Será validado se a classe `medium` possui a propriedade `padding` igual a "8px"', () => {
     const properties = [{
       key: 'padding',
       value: '8px'
@@ -261,7 +261,7 @@ describe('9 - Crie a classe `medium`', () => {
 });
 
 describe('10 - Crie a classe `big`', () => {
-  it('Será validado que deve possuir a propriedade `font-size` igual a "30px"', () => {
+  it('Será validado se a classe `big` possui a propriedade `font-size` igual a "30px"', () => {
     const properties = [{
       key: 'font-size',
       value: '30px'
@@ -270,7 +270,7 @@ describe('10 - Crie a classe `big`', () => {
     checkClass('big', properties);
   });
 
-  it('Será validado que deve possuir a propriedade `padding` igual a "10px"', () => {
+  it('Será validado se a classe `big` possui a propriedade `padding` igual a "10px"', () => {
     const properties = [{
       key: 'padding',
       value: '10px'
@@ -281,7 +281,7 @@ describe('10 - Crie a classe `big`', () => {
 });
 
 describe('11 - Crie a classe `reallybig`', () => {
-  it('Será validado que deve possuir a propriedade `font-size` igual a "40px"', () => {
+  it('Será validado se a classe `reallybig` possui a propriedade `font-size` igual a "40px"', () => {
     const properties = [{
       key: 'font-size',
       value: '40px'
@@ -290,7 +290,7 @@ describe('11 - Crie a classe `reallybig`', () => {
     checkClass('reallybig', properties);
   });
 
-  it('Será validado que deve possuir a propriedade `padding` igual a "15px"', () => {
+  it('Será validado se a classe `reallybig` possui a propriedade `padding` igual a "15px"', () => {
     const properties = [{
       key: 'padding',
       value: '15px'
@@ -301,7 +301,7 @@ describe('11 - Crie a classe `reallybig`', () => {
 });
 
 describe('12 - Crie a classe `rotateleft`', () => {
-  it('Será validado que deve possuir a propriedade `transform` igual a "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"', () => {
+  it('Será validado se a classe `rotateleft` possui a propriedade `transform` igual a "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"', () => {
     const properties =[{
       key: 'transform',
       value: 'matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)'
@@ -312,7 +312,7 @@ describe('12 - Crie a classe `rotateleft`', () => {
 });
 
 describe('13 - Crie a classe `rotateright`', () => {
-  it('Será validado que deve possuir a propriedade `transform` igual a "matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 0)"', () => {
+  it('Será validado se a classe `rotateright` possui a propriedade `transform` igual a "matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 0)"', () => {
     const properties =[{
       key: 'transform',
       value: 'matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 0)'
@@ -323,7 +323,7 @@ describe('13 - Crie a classe `rotateright`', () => {
 });
 
 describe('14 - Crie a classe `skewleft`', () => {
-  it('Será validado que deve possuir a propriedade `transform` igual a "matrix(1, 0, 0.176327, 1, 0, 0)"', () => {
+  it('Será validado se a classe `skewleft` possui a propriedade `transform` igual a "matrix(1, 0, 0.176327, 1, 0, 0)"', () => {
     const properties =[{
       key: 'transform',
       value: 'matrix(1, 0, 0.176327, 1, 0, 0)'
@@ -334,7 +334,7 @@ describe('14 - Crie a classe `skewleft`', () => {
 });
 
 describe('15 - Crie a classe `skewright`', () => {
-  it('Será validado que deve possuir a propriedade `transform` igual a "matrix(1, 0, -0.176327, 1, 0, 0)"', () => {
+  it('erá validado se a classe `skewright` possui a propriedade `transform` igual a "matrix(1, 0, -0.176327, 1, 0, 0)"', () => {
     const properties =[{
       key: 'transform',
       value: 'matrix(1, 0, -0.176327, 1, 0, 0)'
@@ -353,7 +353,7 @@ describe('16 - Adicione as classes de forma aleatória a fim de estilizar as pal
   const first = [];
   const second = [];
 
-  it('Será validado que ao criar uma carta deve possuir uma lista de classes aleatórias', () => {
+  it('Será validado se ao criar uma carta ela recebe uma lista de classes aleatórias', () => {
     createLetter(letterContent);
     cy.get(LETTER_GENERATED_SPANS_SELECTOR).then(($el) => {
       $el.each((_index, span) => {
@@ -364,7 +364,7 @@ describe('16 - Adicione as classes de forma aleatória a fim de estilizar as pal
     });
   });
 
-  it('Será validado que ao criar uma segunda carta deve possuir uma lista de classes aleatórias', () => {
+  it('Será validado se ao criar uma segunda carta ela recebe uma lista de classes aleatórias', () => {
     createLetter(letterContent);
     cy.get(LETTER_GENERATED_SPANS_SELECTOR).then(($el) => {
       $el.each((_index, span) => {
@@ -375,7 +375,7 @@ describe('16 - Adicione as classes de forma aleatória a fim de estilizar as pal
     });
   });
     
-  it('Será validado que as classes das duas cartas não podem ser exatamente iguais', () => { 
+  it('Será validado se as classes das duas cartas não são exatamente iguais', () => { 
     expect(first).to.not.deep.equal(second);
   });
 });
@@ -395,7 +395,7 @@ describe('17 - Com uma carta misteriosa gerada, adicione a possibilidade de alte
   const wordIndex = Math.floor(Math.random() * contentList.length) + 1;
   const wordSelector = `${LETTER_GENERATED_SPANS_SELECTOR}:nth-child(${wordIndex})`;
 
-  it('Será validado que ao clicar em uma carta deve gerar uma nova lista aleatória de classes', () => {
+  it('Será validado se ao clicar em uma carta uma nova lista aleatória de classes é gerada', () => {
     cy.get(wordSelector).then(($el) => {
       const span = $el[0];
       const klasses = span.className.split(WORDS_SPLIT_CHARACTER);
@@ -403,7 +403,7 @@ describe('17 - Com uma carta misteriosa gerada, adicione a possibilidade de alte
     })
   });
 
-  it('Será validado que ao clicar novamente na mesma carta deve gerar uma nova lista aleatória de classes diferente da lista anterior', () => {
+  it('Será validado se ao clicar novamente na mesma carta uma nova lista aleatória de classes é gerada e se a nova lista é diferente da lista anterior', () => {
     cy.get(wordSelector).then(($el) => {
       const span = $el[0];
       const klasses = span.className.split(WORDS_SPLIT_CHARACTER);
@@ -415,11 +415,11 @@ describe('17 - Com uma carta misteriosa gerada, adicione a possibilidade de alte
 });
 
 describe('18 - Deve haver um parágrafo com o id="carta-contador" onde existirá um contador de palavras', () => {
-  it('Será validado que existe um elemento p com o `id="carta-contador"`', () => {
+  it('Será validado que existe um elemento `p` com o `id="carta-contador"`', () => {
     cy.get(LETTER_COUNTER_P_SELECTOR).should('exist');
   });
 
-  it('Será validado que ao criar uma carta deve atualizar o p com o `id="carta-contador" com o número de palavras da carta (valor numérico).', () => {
+  it('Será validado se ao criar uma carta o elemento `p` com o `id="carta-contador"  é atualizado com o número de palavras da carta (valor numérico).', () => {
     const letterContent1 = 'esta é uma carta com 7 palavras';
     const letter1Counter = letterContent1.split(WORDS_SPLIT_CHARACTER).length;
     createLetter(letterContent1);
